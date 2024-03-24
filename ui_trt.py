@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO)
 
 def get_context_dim():
     if shared.sd_model.is_sd1:
-        return 2048
+        return 768
     elif shared.sd_model.is_sd2:
         return 1024
     elif shared.sd_model.is_sdxl:
@@ -92,7 +92,7 @@ def export_unet_to_trt(
     timing_cache = modelmanager.get_timing_cache()
 
     diable_optimizations = is_xl
-    embedding_dim = get_context_dim()
+    embedding_dim = 2048
 
     modelobj = UNetModel(
         shared.sd_model.model.diffusion_model,
