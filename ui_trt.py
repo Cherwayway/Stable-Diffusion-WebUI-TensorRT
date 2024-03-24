@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO)
 
 def get_context_dim():
     if shared.sd_model.is_sd1:
-        return 768
+        return 2048
     elif shared.sd_model.is_sd2:
         return 1024
     elif shared.sd_model.is_sdxl:
